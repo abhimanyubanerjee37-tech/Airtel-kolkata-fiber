@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Airtel Services Kolkata | New Connection & Enquiry</title>
+<meta name="description" content="Enquire about Airtel WiFi, Xstream Fiber, AirFiber and Postpaid services in Kolkata. Submit your details for a callback.">
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:Arial,sans-serif;background:#f5f5f5;color:#222}
+.container{max-width:720px;margin:auto;padding:20px}
+.hero{background:#e40000;color:#fff;padding:32px 22px;text-align:center;border-radius:0 0 22px 22px}
+.hero h1{margin:0 0 10px;font-size:30px}.hero p{margin:6px 0}
+.card{background:#fff;margin:18px 0;padding:22px;border-radius:18px;box-shadow:0 4px 18px #00000012}
+.services{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.service{border:1px solid #ddd;border-radius:12px;padding:15px;text-align:center;font-weight:bold}
+label{display:block;margin:13px 0 6px;font-weight:bold}
+input,select,textarea{width:100%;padding:13px;border:1px solid #ccc;border-radius:9px;font-size:16px}
+button{width:100%;padding:15px;border:0;border-radius:10px;background:#e40000;color:#fff;font-size:17px;font-weight:bold;margin-top:16px}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.actions a{text-decoration:none;text-align:center;padding:14px;border-radius:10px;font-weight:bold;border:1px solid #e40000;color:#e40000}
+.small{font-size:12px;color:#666;line-height:1.5}
+footer{text-align:center;padding:20px;font-size:12px;color:#666}
+@media(max-width:500px){.services{grid-template-columns:1fr}.actions{grid-template-columns:1fr}.hero h1{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="container">
+    <h1>Airtel Services – Kolkata</h1>
+    <p>New Connection & Service Enquiry</p>
+    <p>Get a callback for your requirement</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card">
+    <h2>Services Available</h2>
+    <div class="services">
+      <div class="service">📶 Airtel Xstream Fiber</div>
+      <div class="service">📡 Airtel AirFiber</div>
+      <div class="service">📱 Airtel Postpaid</div>
+      <div class="service">🏦 Airtel Payments Bank</div>
+      <div class="service">💳 Bajaj Finserv EMI Card</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Request a Callback</h2>
+    <form id="leadForm">
+      <label>Full Name *</label>
+      <input id="name" required placeholder="Enter your name">
+
+      <label>Mobile Number *</label>
+      <input id="phone" required type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number">
+
+      <label>Pincode *</label>
+      <input id="pincode" required inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="Kolkata pincode">
+
+      <label>Service Required *</label>
+      <select id="service" required>
+        <option value="">Select a service</option>
+        <option>Airtel Xstream Fiber</option>
+        <option>Airtel AirFiber</option>
+        <option>Airtel Postpaid</option>
+        <option>Airtel Payments Bank</option>
+        <option>Bajaj Finserv EMI Card</option>
+      </select>
+
+      <label>Preferred Call Time</label>
+      <select id="time">
+        <option>Any time</option>
+        <option>Morning (9 AM–12 PM)</option>
+        <option>Afternoon (12 PM–4 PM)</option>
+        <option>Evening (4 PM–8 PM)</option>
+      </select>
+
+      <label>Additional Requirement</label>
+      <textarea id="message" rows="3" placeholder="Optional"></textarea>
+
+      <button type="submit">Submit Enquiry</button>
+    </form>
+    <p class="small">By submitting, you agree to be contacted regarding your selected service. Availability, eligibility, pricing and approval are subject to the applicable provider's terms.</p>
+  </div>
+
+  <div class="card">
+    <h2>Contact</h2>
+    <div class="actions">
+      <a href="tel:+919752620354">📞 Call: 9752620354</a>
+      <a href="https://wa.me/919752620354" target="_blank">💬 WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<footer>Independent enquiry page. Airtel and Bajaj Finserv services are subject to applicable terms, eligibility and availability.</footer>
+
+<script>
+document.getElementById("leadForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const name=document.getElementById("name").value.trim();
+  const phone=document.getElementById("phone").value.trim();
+  const pin=document.getElementById("pincode").value.trim();
+  const service=document.getElementById("service").value;
+  const time=document.getElementById("time").value;
+  const message=document.getElementById("message").value.trim();
+
+  const text =
+    "Hello, I want to enquire about " + service + ".%0A%0A" +
+    "Name: " + encodeURIComponent(name) + "%0A" +
+    "Mobile: " + encodeURIComponent(phone) + "%0A" +
+    "Pincode: " + encodeURIComponent(pin) + "%0A" +
+    "Preferred time: " + encodeURIComponent(time) + "%0A" +
+    "Requirement: " + encodeURIComponent(message);
+
+  window.location.href = "https://wa.me/919752620354?text=" + text;
+});
+</script>
+</body>
+</html>
